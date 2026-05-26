@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio Fotográfico | Diana Ferraro</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f6f3ef;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      min-height: 78vh;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.56)),
+        url("fotos/portada.jpg") center/cover no-repeat;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 50px 22px;
+    }
+
+    header .nombre {
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    header h1 {
+      font-size: clamp(1.3rem, 3vw, 2.2rem);
+      font-weight: normal;
+      margin-bottom: 20px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      max-width: 760px;
+      color: #f1f1f1;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #151515;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 13px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 13px;
+      border-radius: 999px;
+      transition: background 0.3s;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      background: #4a4a4a;
+    }
+
+    main {
+      width: 92%;
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 45px 0 20px;
+    }
+
+    section {
+      margin-bottom: 70px;
+      scroll-margin-top: 90px;
+    }
+
+    section h2 {
+      font-size: clamp(1.7rem, 3vw, 2.3rem);
+      margin-bottom: 10px;
+      border-left: 6px solid #222;
+      padding-left: 12px;
+    }
+
+    .intro {
+      margin-bottom: 25px;
+      color: #555;
+      max-width: 850px;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+      gap: 22px;
+    }
+
+    .foto {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .foto:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    }
+
+    .foto img {
+      width: 100%;
+      height: 255px;
+      object-fit: cover;
+      display: block;
+      background: #ddd;
+    }
+
+    .foto div {
+      padding: 14px;
+    }
+
+    .foto h3 {
+      font-size: 1.02rem;
+      margin-bottom: 5px;
+    }
+
+    .foto p {
+      color: #666;
+      font-size: 0.93rem;
+    }
+
+    .bio {
+      background: white;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.10);
+    }
+
+    .bio p {
+      margin-bottom: 14px;
+      color: #444;
+      font-size: 1.02rem;
+    }
+
+    .bio-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .retrato img {
+      width: 100%;
+      max-width: 280px;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 18px;
+      display: block;
+      margin: 0 auto;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.14);
+      background: #ddd;
+    }
+
+    .bio-texto p:last-child {
+      margin-bottom: 0;
+    }
+
+    footer {
+      background: #151515;
+      color: white;
+      text-align: center;
+      padding: 28px 20px;
+      margin-top: 25px;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        min-height: 68vh;
+      }
+
+      nav a {
+        font-size: 0.9rem;
+        padding: 7px 10px;
+      }
+
+      .foto img {
+        height: 235px;
+      }
+
+      .bio-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header id="inicio">
+    <div class="nombre">Diana Ferraro</div>
+    <h1>Portafolio Fotográfico</h1>
+    <p>Una selección de instantes espontáneos y otros no tanto.</p>
+  </header>
+
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#animales">Animales</a>
+    <a href="#naturaleza">Naturaleza</a>
+    <a href="#cielo">Cielo</a>
+    <a href="#tabogo-city">Tabogo City</a>
+    <a href="#instantes-bonitos">Instantes Bonitos</a>
+    <a href="#autobiografia">Autobiografía</a>
+  </nav>
+
+  <main>
+    <section id="animales">
+      <h2>Animales</h2>
+      <p class="intro">Fotografías centradas en animales, sus expresiones, movimiento y cercanía con lo vivo.</p>
+      <div class="galeria" id="galeria-animales"></div>
+    </section>
+
+    <section id="naturaleza">
+      <h2>Naturaleza</h2>
+      <p class="intro">Paisajes, plantas, texturas y espacios naturales observados desde una mirada pausada.</p>
+      <div class="galeria" id="galeria-naturaleza"></div>
+    </section>
+
+    <section id="cielo">
+      <h2>Cielo</h2>
+      <p class="intro">Imágenes del cielo, las nubes, los colores y los cambios de luz.</p>
+      <div class="galeria" id="galeria-cielo"></div>
+    </section>
+
+    <section id="tabogo-city">
+      <h2>Tabogo City</h2>
+      <p class="intro">Fotografías de espacios urbanos, edificios, recorridos y detalles de ciudad.</p>
+      <div class="galeria" id="galeria-tabogo-city"></div>
+    </section>
+
+    <section id="instantes-bonitos">
+      <h2>Instantes Bonitos</h2>
+      <p class="intro">Fotografías tomadas sin un objetivo definido, nacidas del impulso de capturar algo que simplemente se sintió bonito.</p>
+      <div class="galeria" id="galeria-instantes-bonitos"></div>
+    </section>
+
+    <section id="autobiografia">
+      <h2>Autobiografía</h2>
+      <div class="bio bio-layout">
+        <div class="retrato">
+          <img src="fotos/retrato.jpg" alt="Retrato de Diana Ferraro" />
+        </div>
+
+        <div class="bio-texto">
+          <p>Diana Ferraro construye su mirada fotográfica desde la observación de lo cotidiano, los paisajes y la naturaleza. Sus imágenes buscan detener momentos sencillos y revelar en ellos una forma distinta de mirar: más pausada, sensible y atenta a los detalles.</p>
+          <p>Su trabajo se acerca a los espacios naturales, la luz suave y las escenas silenciosas, entendiendo la fotografía como una manera de transformar lo común en una experiencia visual más íntima. En su historia personal, la cercanía con los animales también ha sido importante: durante siete años compartió su vida con dos pollos que marcaron una parte significativa de su cotidianidad y de su vínculo con lo vivo.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Portafolio fotográfico realizado por Diana Ferraro con imágenes de autoría propia.</p>
+  </footer>
+
+  <script>
+    const secciones = [
+      {
+        id: "galeria-animales",
+        carpeta: "fotos",
+        prefijo: "animales",
+        cantidad: 5,
+        titulo: "Animal",
+        descripcion: "Fotografía propia de animales y vínculos con lo vivo."
+      },
+      {
+        id: "galeria-naturaleza",
+        carpeta: "fotos",
+        prefijo: "naturaleza",
+        cantidad: 11,
+        titulo: "Naturaleza",
+        descripcion: "Fotografía propia de paisajes, vegetación y detalles naturales."
+      },
+      {
+        id: "galeria-cielo",
+        carpeta: "fotos",
+        prefijo: "cielo",
+        cantidad: 7,
+        titulo: "Cielo",
+        descripcion: "Fotografía propia de luz, nubes, colores y atmósferas."
+      },
+      {
+        id: "galeria-tabogo-city",
+        carpeta: "fotos",
+        prefijo: "tabogo-city",
+        cantidad: 7,
+        titulo: "Tabogo City",
+        descripcion: "Fotografía propia de ciudad, arquitectura y recorridos urbanos."
+      },
+      {
+        id: "galeria-instantes-bonitos",
+        carpeta: "fotos",
+        prefijo: "instantes-bonitos",
+        cantidad: 13,
+        titulo: "Instante bonito",
+        descripcion: "Fotografía espontánea tomada por la belleza del momento."
+      }
+    ];
+
+    function crearGaleria(seccion) {
+      const contenedor = document.getElementById(seccion.id);
+
+      for (let i = 1; i <= seccion.cantidad; i++) {
+        const articulo = document.createElement("article");
+        articulo.className = "foto";
+
+        articulo.innerHTML = `
+          <img src="${seccion.carpeta}/${seccion.prefijo}-${i}.jpg" alt="${seccion.titulo} ${i}" />
+          <div>
+            <h3>${seccion.titulo} ${i}</h3>
+            <p>${seccion.descripcion}</p>
+          </div>
+        `;
+
+        contenedor.appendChild(articulo);
+      }
+    }
+
+    secciones.forEach(crearGaleria);
+  </script>
+</body>
+</html>
