@@ -25,7 +25,7 @@
     header {
       min-height: 78vh;
       background:
-        linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.72)),
+        linear-gradient(rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.72)),
         url("fotos/portada.jpg") center/cover no-repeat;
       color: white;
       display: flex;
@@ -40,28 +40,28 @@
       font-size: clamp(2.4rem, 6vw, 5rem);
       letter-spacing: 1px;
       margin-bottom: 10px;
-      text-shadow: 0 4px 22px rgba(0, 0, 0, 0.65);
+      text-shadow: 0 4px 22px rgba(0, 0, 0, 0.75);
     }
 
     header h1 {
       font-size: clamp(1.3rem, 3vw, 2.2rem);
       font-weight: normal;
       margin-bottom: 20px;
-      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.65);
+      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.75);
     }
 
     header p {
       font-size: 1.1rem;
       max-width: 760px;
       color: #eeeeee;
-      text-shadow: 0 3px 14px rgba(0, 0, 0, 0.65);
+      text-shadow: 0 3px 14px rgba(0, 0, 0, 0.75);
     }
 
     nav {
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(0, 0, 0, 0.92);
+      background: rgba(0, 0, 0, 0.94);
       backdrop-filter: blur(8px);
       display: flex;
       justify-content: center;
@@ -124,26 +124,13 @@
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 5px 18px rgba(0, 0, 0, 0.45);
-      transition: box-shadow 0.3s, border-color 0.3s;
+      transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s;
     }
 
     .foto:hover {
       border-color: #ffffff;
       box-shadow: 0 10px 28px rgba(255, 255, 255, 0.16);
-    }
-
-    .foto::before {
-      content: "";
-      display: none;
-    }
-
-    .foto:hover::before {
-      display: block;
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.88);
-      z-index: 900;
-      pointer-events: none;
+      transform: translateY(-4px);
     }
 
     .foto img {
@@ -152,7 +139,6 @@
       object-fit: cover;
       display: block;
       background: #000000;
-      transition: transform 0.25s ease;
       cursor: zoom-in;
     }
 
@@ -166,10 +152,24 @@
       max-height: 88vh;
       object-fit: contain;
       transform: translate(-50%, -50%);
-      z-index: 901;
+      z-index: 1001;
       border-radius: 14px;
-      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.75);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.85);
       cursor: zoom-out;
+    }
+
+    .foto::after {
+      content: "";
+      display: none;
+    }
+
+    .foto:hover::after {
+      display: block;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.88);
+      z-index: 1000;
+      pointer-events: none;
     }
 
     .foto div {
@@ -247,7 +247,11 @@
         height: 235px;
       }
 
-      .foto:hover::before {
+      .foto:hover {
+        transform: none;
+      }
+
+      .foto:hover::after {
         display: none;
       }
 
@@ -289,31 +293,79 @@
     <section id="animales">
       <h2>Animales</h2>
       <p class="intro">Fotografías centradas en animales, sus expresiones, movimiento y cercanía con lo vivo.</p>
-      <div class="galeria" id="galeria-animales"></div>
+      <div class="galeria">
+        <article class="foto"><img src="fotos/animales-1.jpg" alt="Animal 1"><div><h3>Animal 1</h3><p>Fotografía propia de animales y vínculos con lo vivo.</p></div></article>
+        <article class="foto"><img src="fotos/animales-2.jpg" alt="Animal 2"><div><h3>Animal 2</h3><p>Fotografía propia de animales y vínculos con lo vivo.</p></div></article>
+        <article class="foto"><img src="fotos/animales-3.jpg" alt="Animal 3"><div><h3>Animal 3</h3><p>Fotografía propia de animales y vínculos con lo vivo.</p></div></article>
+        <article class="foto"><img src="fotos/animales-4.jpg" alt="Animal 4"><div><h3>Animal 4</h3><p>Fotografía propia de animales y vínculos con lo vivo.</p></div></article>
+        <article class="foto"><img src="fotos/animales-5.jpg" alt="Animal 5"><div><h3>Animal 5</h3><p>Fotografía propia de animales y vínculos con lo vivo.</p></div></article>
+      </div>
     </section>
 
     <section id="naturaleza">
       <h2>Naturaleza</h2>
       <p class="intro">Paisajes, plantas, texturas y espacios naturales observados desde una mirada pausada.</p>
-      <div class="galeria" id="galeria-naturaleza"></div>
+      <div class="galeria">
+        <article class="foto"><img src="fotos/naturaleza-1.jpg" alt="Naturaleza 1"><div><h3>Naturaleza 1</h3><p>Fotografía propia de paisajes, vegetación y detalles naturales.</p></div></article>
+        <article class="foto"><img src="fotos/naturaleza-2.jpg" alt="Naturaleza 2"><div><h3>Naturaleza 2</h3><p>Fotografía propia de paisajes, vegetación y detalles naturales.</p></div></article>
+        <article class="foto"><img src="fotos/naturaleza-3.jpg" alt="Naturaleza 3"><div><h3>Naturaleza 3</h3><p>Fotografía propia de paisajes, vegetación y detalles naturales.</p></div></article>
+        <article class="foto"><img src="fotos/naturaleza-4.jpg" alt="Naturaleza 4"><div><h3>Naturaleza 4</h3><p>Fotografía propia de paisajes, vegetación y detalles naturales.</p></div></article>
+        <article class="foto"><img src="fotos/naturaleza-5.jpg" alt="Naturaleza 5"><div><h3>Naturaleza 5</h3><p>Fotografía propia de paisajes, vegetación y detalles naturales.</p></div></article>
+        <article class="foto"><img src="fotos/naturaleza-6.jpg" alt="Naturaleza 6"><div><h3>Naturaleza 6</h3><p>Fotografía propia de paisajes, vegetación y detalles naturales.</p></div></article>
+        <article class="foto"><img src="fotos/naturaleza-7.jpg" alt="Naturaleza 7"><div><h3>Naturaleza 7</h3><p>Fotografía propia de paisajes, vegetación y detalles naturales.</p></div></article>
+        <article class="foto"><img src="fotos/naturaleza-8.jpg" alt="Naturaleza 8"><div><h3>Naturaleza 8</h3><p>Fotografía propia de paisajes, vegetación y detalles naturales.</p></div></article>
+        <article class="foto"><img src="fotos/naturaleza-9.jpg" alt="Naturaleza 9"><div><h3>Naturaleza 9</h3><p>Fotografía propia de paisajes, vegetación y detalles naturales.</p></div></article>
+        <article class="foto"><img src="fotos/naturaleza-10.jpg" alt="Naturaleza 10"><div><h3>Naturaleza 10</h3><p>Fotografía propia de paisajes, vegetación y detalles naturales.</p></div></article>
+        <article class="foto"><img src="fotos/naturaleza-11.jpg" alt="Naturaleza 11"><div><h3>Naturaleza 11</h3><p>Fotografía propia de paisajes, vegetación y detalles naturales.</p></div></article>
+      </div>
     </section>
 
     <section id="cielo">
       <h2>Cielo</h2>
       <p class="intro">Imágenes del cielo, las nubes, los colores y los cambios de luz.</p>
-      <div class="galeria" id="galeria-cielo"></div>
+      <div class="galeria">
+        <article class="foto"><img src="fotos/cielo-1.jpg" alt="Cielo 1"><div><h3>Cielo 1</h3><p>Fotografía propia de luz, nubes, colores y atmósferas.</p></div></article>
+        <article class="foto"><img src="fotos/cielo-2.jpg" alt="Cielo 2"><div><h3>Cielo 2</h3><p>Fotografía propia de luz, nubes, colores y atmósferas.</p></div></article>
+        <article class="foto"><img src="fotos/cielo-3.jpg" alt="Cielo 3"><div><h3>Cielo 3</h3><p>Fotografía propia de luz, nubes, colores y atmósferas.</p></div></article>
+        <article class="foto"><img src="fotos/cielo-4.jpg" alt="Cielo 4"><div><h3>Cielo 4</h3><p>Fotografía propia de luz, nubes, colores y atmósferas.</p></div></article>
+        <article class="foto"><img src="fotos/cielo-5.jpg" alt="Cielo 5"><div><h3>Cielo 5</h3><p>Fotografía propia de luz, nubes, colores y atmósferas.</p></div></article>
+        <article class="foto"><img src="fotos/cielo-6.jpg" alt="Cielo 6"><div><h3>Cielo 6</h3><p>Fotografía propia de luz, nubes, colores y atmósferas.</p></div></article>
+        <article class="foto"><img src="fotos/cielo-7.jpg" alt="Cielo 7"><div><h3>Cielo 7</h3><p>Fotografía propia de luz, nubes, colores y atmósferas.</p></div></article>
+      </div>
     </section>
 
     <section id="tabogo-city">
       <h2>Tabogo City</h2>
       <p class="intro">Fotografías de espacios urbanos, edificios, recorridos y detalles de ciudad.</p>
-      <div class="galeria" id="galeria-tabogo-city"></div>
+      <div class="galeria">
+        <article class="foto"><img src="fotos/tabogo-city-1.jpg" alt="Tabogo City 1"><div><h3>Tabogo City 1</h3><p>Fotografía propia de ciudad, arquitectura y recorridos urbanos.</p></div></article>
+        <article class="foto"><img src="fotos/tabogo-city-2.jpg" alt="Tabogo City 2"><div><h3>Tabogo City 2</h3><p>Fotografía propia de ciudad, arquitectura y recorridos urbanos.</p></div></article>
+        <article class="foto"><img src="fotos/tabogo-city-3.jpg" alt="Tabogo City 3"><div><h3>Tabogo City 3</h3><p>Fotografía propia de ciudad, arquitectura y recorridos urbanos.</p></div></article>
+        <article class="foto"><img src="fotos/tabogo-city-4.jpg" alt="Tabogo City 4"><div><h3>Tabogo City 4</h3><p>Fotografía propia de ciudad, arquitectura y recorridos urbanos.</p></div></article>
+        <article class="foto"><img src="fotos/tabogo-city-5.jpg" alt="Tabogo City 5"><div><h3>Tabogo City 5</h3><p>Fotografía propia de ciudad, arquitectura y recorridos urbanos.</p></div></article>
+        <article class="foto"><img src="fotos/tabogo-city-6.jpg" alt="Tabogo City 6"><div><h3>Tabogo City 6</h3><p>Fotografía propia de ciudad, arquitectura y recorridos urbanos.</p></div></article>
+        <article class="foto"><img src="fotos/tabogo-city-7.jpg" alt="Tabogo City 7"><div><h3>Tabogo City 7</h3><p>Fotografía propia de ciudad, arquitectura y recorridos urbanos.</p></div></article>
+      </div>
     </section>
 
     <section id="instantes-bonitos">
       <h2>Instantes Bonitos</h2>
       <p class="intro">Fotografías tomadas sin un objetivo definido, nacidas del impulso de capturar algo que simplemente se sintió bonito.</p>
-      <div class="galeria" id="galeria-instantes-bonitos"></div>
+      <div class="galeria">
+        <article class="foto"><img src="fotos/instantes-bonitos-1.jpg" alt="Instante bonito 1"><div><h3>Instante bonito 1</h3><p>Fotografía espontánea tomada por la belleza del momento.</p></div></article>
+        <article class="foto"><img src="fotos/instantes-bonitos-2.jpg" alt="Instante bonito 2"><div><h3>Instante bonito 2</h3><p>Fotografía espontánea tomada por la belleza del momento.</p></div></article>
+        <article class="foto"><img src="fotos/instantes-bonitos-3.jpg" alt="Instante bonito 3"><div><h3>Instante bonito 3</h3><p>Fotografía espontánea tomada por la belleza del momento.</p></div></article>
+        <article class="foto"><img src="fotos/instantes-bonitos-4.jpg" alt="Instante bonito 4"><div><h3>Instante bonito 4</h3><p>Fotografía espontánea tomada por la belleza del momento.</p></div></article>
+        <article class="foto"><img src="fotos/instantes-bonitos-5.jpg" alt="Instante bonito 5"><div><h3>Instante bonito 5</h3><p>Fotografía espontánea tomada por la belleza del momento.</p></div></article>
+        <article class="foto"><img src="fotos/instantes-bonitos-6.jpg" alt="Instante bonito 6"><div><h3>Instante bonito 6</h3><p>Fotografía espontánea tomada por la belleza del momento.</p></div></article>
+        <article class="foto"><img src="fotos/instantes-bonitos-7.jpg" alt="Instante bonito 7"><div><h3>Instante bonito 7</h3><p>Fotografía espontánea tomada por la belleza del momento.</p></div></article>
+        <article class="foto"><img src="fotos/instantes-bonitos-8.jpg" alt="Instante bonito 8"><div><h3>Instante bonito 8</h3><p>Fotografía espontánea tomada por la belleza del momento.</p></div></article>
+        <article class="foto"><img src="fotos/instantes-bonitos-9.jpg" alt="Instante bonito 9"><div><h3>Instante bonito 9</h3><p>Fotografía espontánea tomada por la belleza del momento.</p></div></article>
+        <article class="foto"><img src="fotos/instantes-bonitos-10.jpg" alt="Instante bonito 10"><div><h3>Instante bonito 10</h3><p>Fotografía espontánea tomada por la belleza del momento.</p></div></article>
+        <article class="foto"><img src="fotos/instantes-bonitos-11.jpg" alt="Instante bonito 11"><div><h3>Instante bonito 11</h3><p>Fotografía espontánea tomada por la belleza del momento.</p></div></article>
+        <article class="foto"><img src="fotos/instantes-bonitos-12.jpg" alt="Instante bonito 12"><div><h3>Instante bonito 12</h3><p>Fotografía espontánea tomada por la belleza del momento.</p></div></article>
+        <article class="foto"><img src="fotos/instantes-bonitos-13.jpg" alt="Instante bonito 13"><div><h3>Instante bonito 13</h3><p>Fotografía espontánea tomada por la belleza del momento.</p></div></article>
+      </div>
     </section>
 
     <section id="autobiografia">
@@ -334,68 +386,5 @@
   <footer>
     <p>Portafolio fotográfico realizado por Diana Ferraro con imágenes de autoría propia.</p>
   </footer>
-
-  <script>
-    const secciones = [
-      {
-        id: "galeria-animales",
-        carpeta: "fotos",
-        prefijo: "animales",
-        cantidad: 5,
-        titulo: "Animal",
-        descripcion: "Fotografía propia de animales y vínculos con lo vivo."
-      },
-      {
-        id: "galeria-naturaleza",
-        carpeta: "fotos",
-        prefijo: "naturaleza",
-        cantidad: 11,
-        titulo: "Naturaleza",
-        descripcion: "Fotografía propia de paisajes, vegetación y detalles naturales."
-      },
-      {
-        id: "galeria-cielo",
-        carpeta: "fotos",
-        prefijo: "cielo",
-        cantidad: 7,
-        titulo: "Cielo",
-        descripcion: "Fotografía propia de luz, nubes, colores y atmósferas."
-      },
-      {
-        id: "galeria-tabogo-city",
-        carpeta: "fotos",
-        prefijo: "tabogo-city",
-        cantidad: 7,
-        titulo: "Tabogo City",
-        descripcion: "Fotografía propia de ciudad, arquitectura y recorridos urbanos."
-      },
-      {
-        id: "galeria-instantes-bonitos",
-        carpeta: "fotos",
-        prefijo: "instantes-bonitos",
-        cantidad: 13,
-        titulo: "Instante bonito",
-        descripcion: "Fotografía espontánea tomada por la belleza del momento."
-      }
-    ];
-
-    function crearGaleria(seccion) {
-      const contenedor = document.getElementById(seccion.id);
-
-      for (let i = 1; i <= seccion.cantidad; i++) {
-        const articulo = document.createElement("article");
-        articulo.className = "foto";
-
-        articulo.innerHTML = `
-          <img src="${seccion.carpeta}/${seccion.prefijo}-${i}.jpg" alt="${seccion.titulo} ${i}" />
-          <div>
-            <h3>${seccion.titulo} ${i}</h3>
-            <p>${seccion.descripcion}</p>
-          </div>
-        `;
-
-        contenedor.appendChild(articulo);
-      }
-    }
-
-    secciones.forEach(cre
+</body>
+</html>
